@@ -36,4 +36,14 @@ API_TYPE_TO_SIMPLIFIED: dict[str, str] = {
     "d3-area": "area",
     "d3-lines": "line",
     "d3-scatter-plot": "scatter",
+    "d3-maps-symbols": "symbol_map",
+    "locator-map": "locator_map",
+}
+
+# Aliases for map chart types supported by the Datawrapper API.
+MAP_TYPE_ALIASES: dict[str, str] = {
+    "symbol_map": "d3-maps-symbols",
+    "d3-maps-symbols": "d3-maps-symbols",
+    "locator_map": "locator-map",
+    "locator-map": "locator-map",
 }

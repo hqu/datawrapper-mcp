@@ -67,6 +67,8 @@ async def list_chart_types() -> Sequence[TextContent | ImageContent]:
         "multiple_column": "Grouped column chart - compare multiple series side-by-side",
         "scatter": "Scatter plot - visualize correlations between two variables",
         "stacked_bar": "Stacked bar chart - show part-to-whole relationships",
+        "symbol_map": "Symbol map - plot points by latitude/longitude on a geographic map",
+        "locator_map": "Locator map - place markers on a map with custom tooltip content",
     }
 
     result = "Available Datawrapper chart types:\n\n"
