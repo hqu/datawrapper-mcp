@@ -13,10 +13,10 @@ async def test_update_validates_via_setattr(mock_api_token):
     which triggers Pydantic's validate_assignment=True automatically.
     This is simpler and avoids the model_dump/model_validate cycle.
     """
-    from datawrapper_mcp.handlers.update import update_chart
+    from handlers.update import update_chart
 
     # Mock get_chart to return a ColumnChart instance
-    with patch("datawrapper_mcp.handlers.update.get_chart") as mock_get_chart:
+    with patch("handlers.update.get_chart") as mock_get_chart:
         mock_chart = MagicMock()
         mock_chart.chart_id = "test123"
         mock_chart.chart_type = "column-chart"
@@ -55,9 +55,9 @@ async def test_update_only_sets_provided_fields(mock_api_token):
     The new implementation directly sets attributes from chart_config,
     so only the fields provided should be updated.
     """
-    from datawrapper_mcp.handlers.update import update_chart
+    from handlers.update import update_chart
 
-    with patch("datawrapper_mcp.handlers.update.get_chart") as mock_get_chart:
+    with patch("handlers.update.get_chart") as mock_get_chart:
         mock_chart = MagicMock()
         mock_chart.chart_id = "test123"
         mock_chart.chart_type = "column-chart"

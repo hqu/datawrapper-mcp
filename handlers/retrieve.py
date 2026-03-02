@@ -5,8 +5,8 @@ import json
 from mcp.types import TextContent
 from datawrapper import get_chart
 
-from ..config import API_TYPE_TO_SIMPLIFIED
-from ..types import GetChartArgs
+from config import API_TYPE_TO_SIMPLIFIED
+from dw_types import GetChartArgs
 
 
 async def get_chart_info(arguments: GetChartArgs) -> list[TextContent]:

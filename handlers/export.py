@@ -6,7 +6,7 @@ from typing import Any, cast
 from datawrapper import get_chart
 from mcp.types import ImageContent
 
-from ..types import ExportChartPngArgs
+from dw_types import ExportChartPngArgs
 
 
 async def export_chart_png(arguments: ExportChartPngArgs) -> list[ImageContent]:

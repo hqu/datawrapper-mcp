@@ -5,8 +5,8 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from datawrapper_mcp.config import API_TYPE_TO_SIMPLIFIED, CHART_CLASSES
-from datawrapper_mcp.handlers.retrieve import get_chart_info
+from config import API_TYPE_TO_SIMPLIFIED, CHART_CLASSES
+from handlers.retrieve import get_chart_info
 
 
 @pytest.mark.asyncio
@@ -45,7 +45,7 @@ async def test_get_chart_info_returns_simplified_type(simplified_name, api_type)
     }
 
     # Mock get_chart to return our mock
-    with patch("datawrapper_mcp.handlers.retrieve.get_chart", return_value=mock_chart):
+    with patch("handlers.retrieve.get_chart", return_value=mock_chart):
         result = await get_chart_info({"chart_id": "test123"})
 
     # Parse the JSON response
@@ -75,7 +75,7 @@ async def test_get_chart_info_handles_unknown_type():
         "data": None,
     }
 
-    with patch("datawrapper_mcp.handlers.retrieve.get_chart", return_value=mock_chart):
+    with patch("handlers.retrieve.get_chart", return_value=mock_chart):
         result = await get_chart_info({"chart_id": "test123"})
 
     response_data = json.loads(result[0].text)

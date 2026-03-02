@@ -5,8 +5,8 @@ import json
 from mcp.types import TextContent
 from datawrapper import get_chart
 
-from ..types import UpdateChartArgs
-from ..utils import json_to_dataframe
+from dw_types import UpdateChartArgs
+from utils import json_to_dataframe
 
 
 async def update_chart(arguments: UpdateChartArgs) -> list[TextContent]:

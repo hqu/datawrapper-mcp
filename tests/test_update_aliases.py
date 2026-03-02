@@ -8,9 +8,9 @@ import pytest
 @pytest.mark.asyncio
 async def test_update_with_alias_field_names(mock_api_token):
     """Test that alias field names (e.g., 'base-color') are converted to Python names (e.g., 'base_color')."""
-    from datawrapper_mcp.handlers.update import update_chart
+    from handlers.update import update_chart
 
-    with patch("datawrapper_mcp.handlers.update.get_chart") as mock_get_chart:
+    with patch("handlers.update.get_chart") as mock_get_chart:
         mock_chart = MagicMock()
         mock_chart.chart_id = "test123"
         mock_chart.update = MagicMock()
@@ -55,9 +55,9 @@ async def test_update_with_alias_field_names(mock_api_token):
 @pytest.mark.asyncio
 async def test_update_with_python_field_names(mock_api_token):
     """Test that Python field names still work (e.g., 'base_color')."""
-    from datawrapper_mcp.handlers.update import update_chart
+    from handlers.update import update_chart
 
-    with patch("datawrapper_mcp.handlers.update.get_chart") as mock_get_chart:
+    with patch("handlers.update.get_chart") as mock_get_chart:
         mock_chart = MagicMock()
         mock_chart.chart_id = "test123"
         mock_chart.update = MagicMock()
@@ -102,9 +102,9 @@ async def test_update_with_python_field_names(mock_api_token):
 @pytest.mark.asyncio
 async def test_update_with_mixed_alias_and_python_names(mock_api_token):
     """Test that a mix of alias and Python field names works."""
-    from datawrapper_mcp.handlers.update import update_chart
+    from handlers.update import update_chart
 
-    with patch("datawrapper_mcp.handlers.update.get_chart") as mock_get_chart:
+    with patch("handlers.update.get_chart") as mock_get_chart:
         mock_chart = MagicMock()
         mock_chart.chart_id = "test123"
         mock_chart.update = MagicMock()

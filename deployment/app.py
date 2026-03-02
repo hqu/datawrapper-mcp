@@ -5,7 +5,7 @@ import os
 from starlette.requests import Request
 from starlette.responses import JSONResponse
 
-from datawrapper_mcp.server import mcp
+from server import mcp
 
 
 @mcp.custom_route("/healthz", methods=["GET"])

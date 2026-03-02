@@ -6,7 +6,7 @@ from unittest.mock import MagicMock, patch
 import pandas as pd
 import pytest
 
-from datawrapper_mcp.handlers.retrieve import get_chart_info
+from handlers.retrieve import get_chart_info
 
 
 @pytest.mark.asyncio
@@ -36,7 +36,7 @@ async def test_get_chart_info_returns_complete_config():
     }
     mock_chart.model_dump.return_value = mock_config
 
-    with patch("datawrapper_mcp.handlers.retrieve.get_chart", return_value=mock_chart):
+    with patch("handlers.retrieve.get_chart", return_value=mock_chart):
         result = await get_chart_info({"chart_id": "test123"})
 
     # Verify result structure
@@ -97,7 +97,7 @@ async def test_get_chart_info_config_can_be_reused():
     }
     mock_chart.model_dump.return_value = reusable_config
 
-    with patch("datawrapper_mcp.handlers.retrieve.get_chart", return_value=mock_chart):
+    with patch("handlers.retrieve.get_chart", return_value=mock_chart):
         result = await get_chart_info({"chart_id": "original123"})
 
     response = json.loads(result[0].text)
@@ -149,7 +149,7 @@ async def test_get_chart_info_includes_all_fields():
     }
     mock_chart.model_dump.return_value = complete_config
 
-    with patch("datawrapper_mcp.handlers.retrieve.get_chart", return_value=mock_chart):
+    with patch("handlers.retrieve.get_chart", return_value=mock_chart):
         result = await get_chart_info({"chart_id": "test456"})
 
     response = json.loads(result[0].text)
@@ -191,7 +191,7 @@ async def test_get_chart_info_with_dataframe():
     }
     mock_chart.model_dump.return_value = mock_config
 
-    with patch("datawrapper_mcp.handlers.retrieve.get_chart", return_value=mock_chart):
+    with patch("handlers.retrieve.get_chart", return_value=mock_chart):
         result = await get_chart_info({"chart_id": "test789"})
 
     # Verify result is JSON serializable
@@ -240,7 +240,7 @@ async def test_get_chart_info_with_none_data():
     }
     mock_chart.model_dump.return_value = mock_config
 
-    with patch("datawrapper_mcp.handlers.retrieve.get_chart", return_value=mock_chart):
+    with patch("handlers.retrieve.get_chart", return_value=mock_chart):
         result = await get_chart_info({"chart_id": "test999"})
 
     # Verify result is JSON serializable

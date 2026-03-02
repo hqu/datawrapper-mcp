@@ -6,8 +6,8 @@ from typing import Any, Sequence, cast
 from mcp.server.fastmcp import FastMCP
 from mcp.types import ImageContent, TextContent
 
-from .config import CHART_CLASSES
-from .types import (
+from config import CHART_CLASSES
+from dw_types import (
     CreateChartArgs,
     DeleteChartArgs,
     ExportChartPngArgs,
@@ -16,7 +16,7 @@ from .types import (
     PublishChartArgs,
     UpdateChartArgs,
 )
-from .handlers import (
+from handlers import (
     create_chart as create_chart_handler,
     delete_chart as delete_chart_handler,
     export_chart_png as export_chart_png_handler,
