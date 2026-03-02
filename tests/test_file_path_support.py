@@ -7,7 +7,7 @@ import tempfile
 import pandas as pd
 import pytest
 
-from datawrapper_mcp.utils import json_to_dataframe
+from utils import json_to_dataframe
 
 
 class TestFilePathSupport:

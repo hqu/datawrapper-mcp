@@ -59,13 +59,11 @@ Source = "https://github.com/palewire/datawrapper-mcp/"
 Issues = "https://github.com/palewire/datawrapper-mcp/issues/"
 
 [project.scripts]
-datawrapper-mcp = "datawrapper_mcp.server:main"
+datawrapper-mcp = "server:main"
 
 [tool.setuptools]
-packages = ["datawrapper_mcp"]
-
-[tool.setuptools.package-data]
-datawrapper_mcp = ["py.typed"]
+packages = ["handlers"]
+py-modules = ["server", "config", "utils", "dw_types"]
 
 [tool.setuptools_scm]
 

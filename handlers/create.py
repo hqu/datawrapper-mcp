@@ -7,9 +7,9 @@ from typing import Any
 from datawrapper import Datawrapper
 from mcp.types import TextContent
 
-from ..config import CHART_CLASSES, MAP_TYPE_ALIASES
-from ..types import CreateChartArgs
-from ..utils import json_to_dataframe
+from config import CHART_CLASSES, MAP_TYPE_ALIASES
+from dw_types import CreateChartArgs
+from utils import json_to_dataframe
 
 
 async def create_chart(arguments: CreateChartArgs) -> list[TextContent]:

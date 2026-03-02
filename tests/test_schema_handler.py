@@ -4,7 +4,7 @@ import json
 
 import pytest
 
-from datawrapper_mcp.handlers.schema import get_chart_schema
+from handlers.schema import get_chart_schema
 
 
 @pytest.mark.asyncio

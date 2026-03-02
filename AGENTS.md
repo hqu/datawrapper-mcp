@@ -42,23 +42,23 @@ datawrapper-mcp
 pytest
 
 # Run tests with coverage
-pytest --cov=datawrapper_mcp
+pytest --cov=.
 
 # Type checking
-mypy datawrapper_mcp
+mypy server.py config.py utils.py dw_types.py handlers
 
 # Linting
-ruff check datawrapper_mcp
+ruff check .
 ```
 
 ## Project Structure
 
 ```
-datawrapper_mcp/
-├── __init__.py          # Package initialization
+.
 ├── server.py            # Main MCP server implementation
 ├── config.py            # Configuration and chart type mappings
 ├── utils.py             # Utility functions (data conversion, API token)
+├── dw_types.py          # TypedDict argument contracts for handlers
 └── handlers/            # Handler modules for each operation
     ├── create.py        # Chart creation handler
     ├── update.py        # Chart update handler

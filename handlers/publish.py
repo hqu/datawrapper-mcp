@@ -5,7 +5,7 @@ import json
 from mcp.types import TextContent
 from datawrapper import get_chart
 
-from ..types import PublishChartArgs
+from dw_types import PublishChartArgs
 
 
 async def publish_chart(arguments: PublishChartArgs) -> list[TextContent]:

@@ -16,7 +16,8 @@ ENV PATH="/home/deployment/.local/bin:$PATH"
 WORKDIR /app
 
 # Copy application code
-COPY ./datawrapper_mcp /app/datawrapper_mcp
+COPY ./handlers /app/handlers
+COPY ./server.py ./config.py ./utils.py ./dw_types.py /app/
 COPY ./deployment /app/deployment
 
 # Install dependencies

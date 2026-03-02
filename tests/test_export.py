@@ -5,8 +5,8 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from datawrapper_mcp.handlers.export import export_chart_png
-from datawrapper_mcp.types import ExportChartPngArgs
+from handlers.export import export_chart_png
+from dw_types import ExportChartPngArgs
 
 
 @pytest.mark.asyncio
@@ -19,7 +19,7 @@ class TestExportChartPng:
         mock_chart = MagicMock()
         mock_chart.export_png.return_value = b"PNG_IMAGE_DATA"
 
-        with patch("datawrapper_mcp.handlers.export.get_chart") as mock_get_chart:
+        with patch("handlers.export.get_chart") as mock_get_chart:
             mock_get_chart.return_value = mock_chart
 
             # Create arguments with border parameters
@@ -53,7 +53,7 @@ class TestExportChartPng:
         mock_chart = MagicMock()
         mock_chart.export_png.return_value = b"PNG_IMAGE_DATA"
 
-        with patch("datawrapper_mcp.handlers.export.get_chart") as mock_get_chart:
+        with patch("handlers.export.get_chart") as mock_get_chart:
             mock_get_chart.return_value = mock_chart
 
             # Create arguments with all parameters
@@ -93,7 +93,7 @@ class TestExportChartPng:
         mock_chart = MagicMock()
         mock_chart.export_png.return_value = b"PNG_IMAGE_DATA"
 
-        with patch("datawrapper_mcp.handlers.export.get_chart") as mock_get_chart:
+        with patch("handlers.export.get_chart") as mock_get_chart:
             mock_get_chart.return_value = mock_chart
 
             # Create arguments without border parameters
@@ -119,7 +119,7 @@ class TestExportChartPng:
         mock_chart = MagicMock()
         mock_chart.export_png.return_value = b"PNG_IMAGE_DATA"
 
-        with patch("datawrapper_mcp.handlers.export.get_chart") as mock_get_chart:
+        with patch("handlers.export.get_chart") as mock_get_chart:
             mock_get_chart.return_value = mock_chart
 
             # Create arguments with only chart_id
@@ -142,7 +142,7 @@ class TestExportChartPng:
         mock_chart = MagicMock()
         mock_chart.export_png.return_value = b"PNG_IMAGE_DATA"
 
-        with patch("datawrapper_mcp.handlers.export.get_chart") as mock_get_chart:
+        with patch("handlers.export.get_chart") as mock_get_chart:
             mock_get_chart.return_value = mock_chart
 
             # Create arguments with only border_width
@@ -167,7 +167,7 @@ class TestExportChartPng:
         mock_chart = MagicMock()
         mock_chart.export_png.return_value = b"PNG_IMAGE_DATA"
 
-        with patch("datawrapper_mcp.handlers.export.get_chart") as mock_get_chart:
+        with patch("handlers.export.get_chart") as mock_get_chart:
             mock_get_chart.return_value = mock_chart
 
             # Create arguments with only border_color
@@ -193,7 +193,7 @@ class TestExportChartPng:
         test_png_data = b"\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR"
         mock_chart.export_png.return_value = test_png_data
 
-        with patch("datawrapper_mcp.handlers.export.get_chart") as mock_get_chart:
+        with patch("handlers.export.get_chart") as mock_get_chart:
             mock_get_chart.return_value = mock_chart
 
             # Create arguments
@@ -212,7 +212,7 @@ class TestExportChartPng:
 
     async def test_export_error_handling(self):
         """Test error handling when chart export fails."""
-        with patch("datawrapper_mcp.handlers.export.get_chart") as mock_get_chart:
+        with patch("handlers.export.get_chart") as mock_get_chart:
             mock_get_chart.side_effect = Exception("Chart not found")
 
             # Create arguments
